@@ -1,3 +1,5 @@
+/* Main Layout Styles */
+
 body {
     padding-top: 50px;
     display: flex;
@@ -5,13 +7,35 @@ body {
     flex-direction: column;
 }
 
+main {
+    flex: 1 0 auto;
+}
+
+.page-footer {
+    background-color: black;
+    padding-top: 0;
+}
+
+
+/* Example Layout Styles */
+
 .breedButton {
     margin: 5px;
     padding: 0 40px;
     background-color: #651fff;
 }
 
-.page-footer {
-    background-color: black;
-    padding-top: 0;
+
+/* Map Layout Styles */
+
+#map {
+    height: 50vh;
+    width: 50vh;
+    background-color: green;
+}
+
+#pano {
+    height: 50vh;
+    width: 50vh;
+    background-color: green;
 }

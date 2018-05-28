@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 const dogs = require('./app/dogs/dogs_controller.js');
+const qBank = require('./app/questions/qbank.js');
 
-// Example Layout - Get All Data
+// Example Layout - Get All Dogs from DB
 router.get('/', (req, res) => {
     var breeds;
     dogs.selectAll((breedData) => {
@@ -13,6 +14,20 @@ router.get('/', (req, res) => {
         });
     });
 });
+
+// HTML Routes
+
+router.get('/survey', (req, res) => {
+    res.render('survey', {
+        questions: qBank
+    });
+});
+
+
+router.get('/results', (req, res) => {
+    res.render('results');
+});
+
 
 // Example Dog Routes
 router.post('/dogs', (req, res) => {
