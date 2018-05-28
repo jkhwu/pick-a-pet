@@ -1,0 +1,17 @@
+{{!-- Example Button Layout --}}
+
+<div class="row">
+    <div class="col s12 center">
+        <i class="large material-icons deep-purple-text text-accent-3">pets</i>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12">
+      {{#each breeds}}
+          <button class="breedButton waves-effect waves-light btn"> 
+              {{this.breed}}
+          </button>
+      {{/each}}
+    </div>
+</div>

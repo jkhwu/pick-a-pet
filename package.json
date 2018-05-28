@@ -1,0 +1,31 @@
+{
+    "name": "pick-a-pet",
+    "version": "1.0.0",
+    "description": "a service that matches users with adoptable pets based on their personalities and lifestyles",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "db-create": "mysql -uroot < app/db/schema.sql",
+        "db-seed": "mysql -uroot < app/db/seed.sql",
+        "db-delete": "mysqladmin -uroot drop pick_a_pet",
+        "db-setup": "npm run db-create; npm run db-seed",
+        "db-reset": "npm run db-delete; npm run db-setup"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jkhwu/pick-a-pet.git"
+    },
+    "author": "team-pick-a-pet",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jkhwu/pick-a-pet/issues"
+    },
+    "homepage": "https://github.com/jkhwu/pick-a-pet#readme",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.3",
+        "express-handlebars": "^3.0.0",
+        "method-override": "^2.3.10",
+        "mysql": "^2.15.0"
+    }
+}

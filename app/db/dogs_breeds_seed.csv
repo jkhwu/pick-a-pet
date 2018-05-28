@@ -1,0 +1,148 @@
+Akita,28,120,extra-large,no,high
+Anatolian Sheepdog,29,150,extra-large,no,medium
+Kuvasz,30,120,extra-large,no,high
+Australian Terrier,10,14,small,yes,medium
+Basenji,17,22,small,yes,high
+Beagle,16,30,small,best,high
+Bedlington Terrier,16,23,small,yes,high
+Bichon Frise,12,18,small,yes,high
+Border Terrier,15,15,small,yes,high
+Boston Terrier,15,25,small,yes,high
+Brussels Griffon,8,12,small,no,high
+Cairn Terrier,10,14,small,yes,high
+Cardigan Welsh Corgi,12,35,small,yes,medium
+Mastiff,30,190,extra-large,yes,low
+Cavalier King Charles Spaniel,15,20,small,yes,medium
+Dachshund,10,32,small,yes,medium
+Dandie Dinmont Terrier,24,11,small,yes,medium
+English Toy Spaniel,10,15,small,no,medium
+Fox Terrier Smooth,16,20,small,yes,high
+Fox Terrier Wirehair,16,20,small,yes,high
+French Bulldog,12,28,small,yes,medium
+German Pinscher,19,35,small,yes,high
+Glen Imaal Terrier,14,36,small,yes,high
+Neopolitan Mastiff,30,150,extra-large,yes,medium
+Lakeland Terrier,14,17,small,yes,high
+Manchester Terrier (Standard),16,18,small,yes,high
+Poodle Miniature,15,20,small,yes,medium
+Pug,11,22,small,yes,medium
+Puli,17,33,small,yes,high
+Schipperke,13,18,small,yes,high
+Scottish Terrier,12,22,small,yes,high
+Sealyham Terrier,12,20,small,yes,high
+Shetland Sheepdog (Sheltie),16,20,small,yes,high
+Shiba Inu,16,30,small,yes,high
+Newfoundland,28,150,extra-large,best,medium
+Shih Tzu,11,16,small,yes,medium
+Silky Terrier,10,11,small,yes,high
+Skye Terrier,10,25,small,yes,medium
+Tibetan Spaniel,10,15,small,yes,medium
+Tibetan Terrier,17,30,small,yes,high
+Welsh Terrier,15,21,small,yes,high
+West Highland White Terrier,11,15,small,yes,high
+Whippet,22,30,small,yes,high
+Affenpinscher,12,12,small,no,high
+Chihuahua,9,5,small,yes,medium
+Otter Hound,26,110,extra-large,yes,high
+Chinese Crested,13,12,small,yes,low
+Italian Greyhound,15,10,small,yes,high
+Japanese Chin,11,11,small,yes,low
+Maltese,10,6,small,yes,medium
+Manchester Terrier (Toy),12,8,small,yes,high
+Papillon,11,10,small,yes,high
+Pomeranian,12,7,small,no,medium
+Poodle Toy,10,10,small,yes,medium
+Toy Fox Terrier,10,7,small,yes,high
+Yorkshire Terrier,8,7,small,no,high
+Rottweiler,27,110,extra-large,yes,high
+Saint Bernard,28,190,extra-large,yes,medium 
+Afghan Hound,27,60,medium,yes,high
+American Foxhound,25,70,medium,yes,high
+Bernese Mountain Dog,27,110,extra-large,yes,high
+Beauceron,27,120,extra-large,NULL,medium 
+Belgian Malinois,26,65,medium,yes,high
+Belgian Sheepdog,26,75,extra-large,yes,high
+Belgian Tervuren,26,75,extra-large,yes,high
+Black And Tan Coonhound,27,75,extra-large,yes,high
+Black Russian Terrier,29,140,extra-large,yes,high
+Bouvier Des Flandres,27,95,extra-large,yes,high
+Boxer,25,70,medium ,yes,high
+Briard,27,76,extra-large,yes,high
+Chesapeake Bay Retriever,26,75,extra-large,yes,high
+Bloodhound,26,120,extra-large,yes,high
+Clumber Spaniel,20,65,medium,yes,medium 
+Collie (Rough) & (Smooth),26,75,extra-large,yes,medium 
+Curly Coated Retriever,27,80,extra-large,yes,medium 
+Doberman Pinscher,28,100,extra-large,yes,medium 
+English Foxhound,25,70,medium,yes,high
+English Setter,27,80,medium,yes,high
+German Shepherd Dog,26,90,extra-large,yes,high
+German Shorthaired Pointer,27,80,extra-large,yes,high
+German Wirehaired Pointer,26,70,medium,yes,high
+Giant Schnauzer,28,75,extra-large,yes,high
+Borzoi,28,100,extra-large,yes,medium 
+Golden Retriever,24,75,extra-large,best,high
+Gordon Setter,27,80,extra-large,yes,high
+Greyhound,30,70,medium ,yes,high
+Irish Setter,27,70,medium ,yes,high
+Komondor,36,135,extra-large,yes,low
+Labrador Retriever,24,80,extra-large,best,high
+Old English Sheepdog (Bobtail),24,65,medium,yes,high
+Poodle Standard,25,45,medium,yes,medium 
+Rhodesian Ridgeback,27,85,extra-large,yes,high
+Scottish Deerhound,32,110,extra-large,yes,high
+Bullmastiff,27,130,extra-large,yes,medium 
+Spinone Italiano,28,80,extra-large,NULL,medium 
+Tibetan Mastiff,26,170,extra-large,yes,high
+Weimaraner,27,85,extra-large,best,high
+Airdale Terrier,24,45,medium,yes,high
+American Staffordshire Terrier,19,50,medium ,yes,medium 
+American Water Spaniel,18,45,medium,yes,medium 
+Australian Cattle Dog,20,45,medium,yes,medium 
+Australian Shepherd,23,60,medium ,yes,medium 
+Basset Hound,14,50,medium ,yes,medium 
+Bearded Collie,22,60,medium ,yes,high
+Great Dane,32,160,extra-large,yes,high
+Border Collie,21,40,medium ,yes,high
+Brittany,21,40,medium ,yes,high
+Bull Dog,16,60,medium,yes,low
+Bull Terrier,22,70,medium ,yes,high
+Canaan Dog,24,55,medium ,no,high
+Chinese Shar Pei,20,55,medium ,no,low
+Chow Chow,22,55,medium ,no,low
+Cocker Spaniel-American,16,28,medium ,yes,high
+Cocker Spaniel-English,17,35,medium ,yes,high
+Dalmatian,23,70,medium ,yes,high
+Great Pyrenees,32,120,extra-large,yes,high
+English Springer Spaniel,20,55,medium ,yes,high
+Field Spaniel,18,50,medium ,yes,high
+Flat Coated Retriever,23,70,medium ,yes,high
+Finnish Spitz,20,35,medium ,yes,high
+Harrier,21,60,medium ,yes,high
+Ibizan Hound,29,55,medium ,yes,high
+Irish Terrier,19,27,medium ,yes,high
+Irish Water Spaniel,23,65,medium ,yes,high
+Keeshond,19,50,medium ,yes,medium 
+Kerry Blue Terrier,21,45,medium ,yes,high
+Great Swiss Mountain Dog,28,150,extra-large,yes,high
+Norwegian Elkhound,20,60,medium ,yes,high
+Nova Scotia Duck Tolling Retriever,21,50,medium ,yes,high
+Petit Basset Griffon Vendeen,15,40,medium ,yes,high
+Pharaoh Hound,25,55,medium ,yes,low
+Plott Hound,24,55,medium ,yes,high
+Pointer,24,66,medium ,yes,high
+Polish Lowland Sheepdog,20,35,medium ,yes,high
+Portuguese Water Dog,23,60,medium,yes,medium
+Redbone Coonhound,27,70,medium ,yes,high
+Saluki,28,70,medium ,yes,high
+Irish Wolfhound,35,150,extra-large,yes,low
+Samoyed,24,65,medium ,yes,high
+Siberian Husky,23,60,medium ,yes,high
+Soft-Coated Wheaten Terrier,20,45,medium ,best,medium
+Staffordshire Bull Terrier,16,28,medium ,yes,medium 
+Standard Schnauzer,19,33,medium,yes,high
+Sussex Spaniel,16,45,medium ,yes,low
+Vizsla,66,25,medium ,yes,high
+Welsh Springer Spaniel,19,45,medium ,yes,high
+Wirehaired Pointing Griffon,24,60,medium ,yes,high
+American Eskimo,19,30,medium ,yes,high

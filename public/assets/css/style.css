@@ -1,0 +1,17 @@
+body {
+    padding-top: 50px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.breedButton {
+    margin: 5px;
+    padding: 0 40px;
+    background-color: #651fff;
+}
+
+.page-footer {
+    background-color: black;
+    padding-top: 0;
+}
