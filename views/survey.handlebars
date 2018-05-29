@@ -1,22 +1,40 @@
-<div className="Survey">
+<div class="Survey">
     <h2>Dog Breed Selector Quiz</h2>
-        <form className="choices">
-            <ol>
+        <form>
+            <input type="radio" /><span>Boop</span>
+            <select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+            {{!-- <ol>
                 {{#each questions}}
-                    <li className="question">
+                    <li class="question">
                         <p><strong>{{this.q}}</strong></p>
+                        {{#each this.c}}
+                            <p>
+                                <label>
+                                    <input type="radio" class="with-gap" name={{this.id}} value={{this.id}}/>
+                                    <span>{{this.option}}</span>
+                                </label>
+                            </p>
+                        {{/each}}
                     </li>
                 {{/each}}
-            </ol>
-            <div className="row">
-                <div className="input-field col s3">
-                    <i className="material-icons prefix">local_post_office</i>
-                    <input id="icon_prefix" type="text" className="validate"/>
+            </ol> --}}
+
+            <div class="row">
+                <div class="input-field col s3">
+                    <i class="material-icons prefix">local_post_office</i>
+                    <input id="icon_prefix" type="text" class="validate" />
                     <label for="icon_prefix">ZIP code</label>
                 </div>
             </div>
-            <button className="btn btn-default" type="submit">
+
+            <button class="btn btn-default" type="submit">
                 See Available Dogs!
             </button>
+
         </form>
 </div>
