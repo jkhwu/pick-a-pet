@@ -34,8 +34,9 @@ $(document).ready(() => {
 
         if (validateForm()) {
             var userInput = getAnswers();
+            console.log(userInput);
             $.post('/results', userInput, function(data) {
-                console.log(data);
+                // console.log(data);
             });
         } else {
             alert("Please answer all questions!");

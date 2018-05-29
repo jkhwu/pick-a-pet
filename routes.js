@@ -4,6 +4,28 @@ const router = express.Router();
 const dogs = require('./app/dogs/dogs_controller.js');
 const qBank = require('./app/questions/qbank.js');
 
+// Global variables to pass into the results page
+let zipSearch = 92129;
+let breedSearchJSON = [{
+        id: 47,
+        breed: 'Chinese Crested',
+        height: 13,
+        weight: 12,
+        size: 'small',
+        child_friendly: 'yes',
+        energy_level: 'low'
+    },
+    {
+        id: 49,
+        breed: 'Japanese Chin',
+        height: 11,
+        weight: 11,
+        size: 'small',
+        child_friendly: 'yes',
+        energy_level: 'low'
+    }
+];
+
 // Example Layout - Get All Dogs from DB
 router.get('/', (req, res) => {
     var breeds;
@@ -24,16 +46,40 @@ router.get('/survey', (req, res) => {
 });
 
 router.get('/results', (req, res) => {
-    res.render('results');
+    res.render('results', { // Can this info be used in the handlebars file?
+        breeds: breedSearchJSON,
+        zip: zipSearch
+    });
 });
 
 
 // API Routes
 
 router.post('/results', (req, res) => {
-    var userInput = req.body;
+    zipSearch = req.body.zip;
+    console.log('zipSearch: ', zipSearch);
+    if (req.body.a4 == 'toddlers' || req.body.a4 == 'youngKids') {
+        dogs.selectNotAndWhereAndWhere('child_friendly', 'no', 'size', req.body.a6, 'energy_level', req.body.a5, (data) => {
+            breedSearchJSON = data;
+            console.log('breedSearchJSON: ', breedSearchJSON);
 
-    res.json(req.body);
+            // How to redirect to results page? Help!
+            // res.json(data);
+            // res.render('/results');
+            res.redirect('/results');
+        });
+    } else {
+        dogs.selectWhereAndWhere('size', req.body.a6, 'energy_level', req.body.a5, (data) => {
+            breedSearchJSON = data;
+            console.log('breedSearchJSON: ', breedSearchJSON);
+
+            // How to redirect to results page? Help!
+            // res.json(data);
+            // res.render('/results');
+            res.redirect('/results');
+        });
+    }
+    // res.json(req.body);
     // res.redirect('/results');
 });
 
