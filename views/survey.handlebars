@@ -1,13 +1,31 @@
 <div class="Survey">
     <h2>Dog Breed Selector Quiz</h2>
-        <form>
-            <input type="radio" /><span>Boop</span>
-            <select>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
+ <form action="#">
+    <p>
+      <label>
+        <input name="group1" type="radio" />
+        <span>Red</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="group1" type="radio" />
+        <span>Yellow</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input class="with-gap" name="group1" type="radio"  />
+        <span>Green</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="group1" type="radio" />
+        <span>Brown</span>
+      </label>
+    </p>
+  </form>
             {{!-- <ol>
                 {{#each questions}}
                     <li class="question">
