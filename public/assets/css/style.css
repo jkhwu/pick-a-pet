@@ -1,7 +1,6 @@
 /* Main Layout Styles */
 
 body {
-    padding-top: 50px;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -12,8 +11,8 @@ main {
 }
 
 .page-footer {
-    background-color: black;
-    padding-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-top: 60px;
 }
 
@@ -39,4 +38,18 @@ main {
     height: 50vh;
     width: 50vh;
     background-color: green;
+}
+
+
+/* Parallax Additional Styles */
+
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255, 255, 255, .9);
+}
+
+.parallax-container .section {
+    width: 100%;
 }

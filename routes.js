@@ -23,13 +23,22 @@ router.get('/survey', (req, res) => {
     });
 });
 
-
 router.get('/results', (req, res) => {
     res.render('results');
 });
 
 
+// API Routes
+
+router.post('/results', (req, res) => {
+    var userInput = req.body;
+
+    res.json(req.body);
+    // res.redirect('/results');
+});
+
 // Example Dog Routes
+
 router.post('/dogs', (req, res) => {
     if (req.body.breed !== '') {
         dogs.insertOne(req.body.breed, (data) => res.redirect('/'));
