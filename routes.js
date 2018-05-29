@@ -57,11 +57,11 @@ router.get('/results', (req, res) => {
 
 router.post('/results', (req, res) => {
     zipSearch = req.body.zip;
-    console.log('zipSearch: ', zipSearch);
+    console.log('\nzipSearch: ', zipSearch);
     if (req.body.a4 == 'toddlers' || req.body.a4 == 'youngKids') {
         dogs.selectNotAndWhereAndWhere('child_friendly', 'no', 'size', req.body.a6, 'energy_level', req.body.a5, (data) => {
             breedSearchJSON = data;
-            console.log('breedSearchJSON: ', breedSearchJSON);
+            console.log('\nbreedSearchJSON: ', breedSearchJSON);
 
             // How to redirect to results page? Help!
             // res.json(data);
@@ -71,7 +71,7 @@ router.post('/results', (req, res) => {
     } else {
         dogs.selectWhereAndWhere('size', req.body.a6, 'energy_level', req.body.a5, (data) => {
             breedSearchJSON = data;
-            console.log('breedSearchJSON: ', breedSearchJSON);
+            console.log('\nbreedSearchJSON: ', breedSearchJSON);
 
             // How to redirect to results page? Help!
             // res.json(data);
