@@ -1,7 +1,7 @@
 <div class="Survey">
     <h2>Dog Breed Selector Quiz</h2>
- <form action="#">
-    <p>
+    <form action="#">
+    {{!-- <p>
       <label>
         <input name="group1" type="radio" />
         <span>Red</span>
@@ -25,22 +25,22 @@
         <span>Brown</span>
       </label>
     </p>
-  </form>
-            {{!-- <ol>
-                {{#each questions}}
+  </form> --}}
+            <ol>
+                {{#questions}}
                     <li class="question">
-                        <p><strong>{{this.q}}</strong></p>
-                        {{#each this.c}}
+                        <p><strong>{{q}}</strong></p>
+                        {{#c}}
                             <p>
                                 <label>
-                                    <input type="radio" class="with-gap" name={{this.id}} value={{this.id}}/>
-                                    <span>{{this.option}}</span>
+                                    <input type="radio" class="with-gap" name="test" value={{id}} />
+                                    <span>{{option}}</span>
                                 </label>
                             </p>
-                        {{/each}}
+                        {{/c}}
                     </li>
-                {{/each}}
-            </ol> --}}
+                {{/questions}}
+            </ol>
 
             <div class="row">
                 <div class="input-field col s3">
