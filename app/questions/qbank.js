@@ -46,8 +46,7 @@ const qBank = [{
     c: [
         { id: 1, topic: 'size', value: "small", option: "Small or Toy" },
         { id: 2, topic: 'size', value: "medium", option: "Medium" },
-        { id: 3, topic: 'size', value: "extra-large", option: "Large" },
-        { id: 5, topic: 'size', value: "don't-care", option: "Don’t care" }
+        { id: 3, topic: 'size', value: "extra-large", option: "Large" }
     ]
 }, {
     id: 7,

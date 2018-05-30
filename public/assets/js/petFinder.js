@@ -1,6 +1,22 @@
 var url = 'http://api.petfinder.com/pet.find';
 var petApiKey = 'feac31e797b10511584809f14f866c76';
-var zip = 92110 //document.getElementById('zip').value;
+var zip = $('#mapZip').text()
+
+var breeds = $('#dogsView').attr('data-breeds').split(',');
+var size = $('#dogsView').attr('data-size');
+
+function translateSize(oldSize) {
+    var newSize;
+    if (oldSize == 'small') newsize = 'S';
+    else if (oldSize == 'medium') newsize = 'M';
+    else if (oldSize == 'extra-large') newsize = "L";
+    return newSize;
+}
+
+
+translateSize(size);
+console.log(breeds);
+console.log(size);
 
 $.ajax({
     url: url,
@@ -9,7 +25,9 @@ $.ajax({
     data: {
         key: petApiKey,
         animal: 'dog',
-        'location': zip,
+        size: size,
+        breed: breeds[0],
+        location: zip,
         output: 'full',
         count: 5,
         format: 'json'
@@ -30,16 +48,16 @@ $.ajax({
         var phone = response.petfinder.pets.pet[i].contact.phone.$t;
         //var fullAddress = address + city + state + zip
 
-        console.log(dogName)
-        console.log(img)
-        console.log(age)
-        console.log(size)
-        console.log(email)
-        console.log(phone)
-            //console.log(fullAddress)
-            //console.log(id)
-            //console.log(breed1)
-            //console.log(breed2)
+        // console.log(dogName)
+        // console.log(img)
+        // console.log(age)
+        // console.log(size)
+        // console.log(email)
+        // console.log(phone)
+        //console.log(fullAddress)
+        //console.log(id)
+        //console.log(breed1)
+        //console.log(breed2)
         var DogDiv = $("<div class='dog'>");
 
         var pupName = $("<h3>").text("Name: " + dogName);

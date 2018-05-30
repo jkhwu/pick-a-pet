@@ -17,17 +17,13 @@ let answers = {
     timeAlone: 'notAlone',
     kids: 'noKids',
     energyLevel: 'low',
-    size: 'small',
+    size: 'S',
     age: 'baby',
     coatLength: 'short',
     guardLevel: 'noGuard',
     experience: 'yes',
     zip: '92129'
 };
-// let zip = 92129;
-// let children = 'noKids';
-// let energyLevel = 'low';
-// let size = 'small';
 let breedSearchJSON = [{
         id: 47,
         breed: 'Chinese Crested',
@@ -47,6 +43,9 @@ let breedSearchJSON = [{
         energy_level: 'low'
     }
 ];
+
+// let breedSearchArray = ['Terrier', 'Shepherd'];
+let breedSearchArray = [];
 
 // Example Layout - Get All Dogs from DB
 router.get('/', (req, res) => {
@@ -70,20 +69,24 @@ router.get('/survey', (req, res) => {
 router.get('/results', (req, res) => {
     if (answers.kids == 'toddlers' || answers.kids == 'youngKids') {
         dogs.selectNotAndWhereAndWhere('child_friendly', 'no', 'size', answers.size, 'energy_level', answers.energyLevel, (data) => {
-            breedSearchJSON = data;
-            console.log('\nbreedSearchJSON: ', breedSearchJSON);
+            console.log('data: ', data);
+            breedSearchArray = pullOutBreeds(data);
+            console.log('\nbreedSearchArray: ', breedSearchArray);
             res.render('results', {
-                breeds: breedSearchJSON,
-                zip: answers.zip
+                breeds: breedSearchArray,
+                zip: answers.zip,
+                size: answers.size
             });
         });
     } else {
-        dogs.selectWhereAndWhere('size', req.body.a6, 'energy_level', req.body.a5, (data) => {
-            breedSearchJSON = data;
-            console.log('\nbreedSearchJSON: ', breedSearchJSON);
+        dogs.selectWhereAndWhere('size', answers.size, 'energy_level', answers.energyLevel, (data) => {
+            console.log('data: ', data);
+            breedSearchArray = pullOutBreeds(data);
+            console.log('\nbreedSearchArray: ', breedSearchArray);
             res.render('results', {
-                breeds: breedSearchJSON,
-                zip: answers.zip
+                breeds: breedSearchArray,
+                zip: answers.zip,
+                size: answers.size
             });
         });
     }
@@ -94,8 +97,8 @@ router.get('/results', (req, res) => {
 // API Routes
 
 router.post('/results', (req, res) => {
-    console.log(req.body);
     answers = req.body;
+    console.log('\nANSWERS SUBMITTED: ', answers);
     res.redirect('/results');
 });
 
@@ -136,5 +139,16 @@ router.delete('/dogs/:id', (req, res) => {
 router.get('*', (req, res) => {
     res.send('404')
 });
+
+// Helper Function
+
+function pullOutBreeds(data) {
+    var breedArray = [];
+    data.forEach(element => {
+        console.log(element.breed);
+        breedArray.push(element.breed);
+    });
+    return breedArray;
+}
 
 module.exports = router;
