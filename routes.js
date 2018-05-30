@@ -17,7 +17,7 @@ let answers = {
     timeAlone: 'notAlone',
     kids: 'noKids',
     energyLevel: 'low',
-    size: 'S',
+    size: 'small',
     age: 'baby',
     coatLength: 'short',
     guardLevel: 'noGuard',

@@ -7,14 +7,13 @@ var size = $('#dogsView').attr('data-size');
 
 function translateSize(oldSize) {
     var newSize;
-    if (oldSize == 'small') newsize = 'S';
-    else if (oldSize == 'medium') newsize = 'M';
-    else if (oldSize == 'extra-large') newsize = "L";
+    if (oldSize == 'small') newSize = 'S';
+    else if (oldSize == 'medium') newSize = 'M';
+    else if (oldSize == 'extra-large') newSize = "L";
     return newSize;
 }
 
-
-translateSize(size);
+size = translateSize(size);
 console.log(breeds);
 console.log(size);
 
@@ -26,7 +25,7 @@ $.ajax({
         key: petApiKey,
         animal: 'dog',
         size: size,
-        breed: breeds[0],
+        // breed: breeds[0],
         location: zip,
         output: 'full',
         count: 5,
