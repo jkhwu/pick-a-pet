@@ -1,4 +1,4 @@
-var url = 'http://api.petfinder.com/pet.find';
+var url = 'https://api.petfinder.com/pet.find';
 var petApiKey = 'feac31e797b10511584809f14f866c76';
 var zip = $('#mapZip').text()
 
