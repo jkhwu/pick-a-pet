@@ -10,7 +10,24 @@ var yelp = require('yelp-fusion');
 var client = yelp.client(yelpApiKey);
 
 // Global variables to pass into the results page
-let zipSearch = 92129;
+
+let answers = {
+    homeSize: 'apartment',
+    yardSize: 'noYard',
+    timeAlone: 'notAlone',
+    kids: 'noKids',
+    energyLevel: 'low',
+    size: 'small',
+    age: 'baby',
+    coatLength: 'short',
+    guardLevel: 'noGuard',
+    experience: 'yes',
+    zip: '92129'
+};
+// let zip = 92129;
+// let children = 'noKids';
+// let energyLevel = 'low';
+// let size = 'small';
 let breedSearchJSON = [{
         id: 47,
         breed: 'Chinese Crested',
@@ -51,41 +68,35 @@ router.get('/survey', (req, res) => {
 });
 
 router.get('/results', (req, res) => {
-    res.render('results', { // Can this info be used in the handlebars file?
-        breeds: breedSearchJSON,
-        zip: zipSearch
-    });
+    if (answers.kids == 'toddlers' || answers.kids == 'youngKids') {
+        dogs.selectNotAndWhereAndWhere('child_friendly', 'no', 'size', answers.size, 'energy_level', answers.energyLevel, (data) => {
+            breedSearchJSON = data;
+            console.log('\nbreedSearchJSON: ', breedSearchJSON);
+            res.render('results', {
+                breeds: breedSearchJSON,
+                zip: answers.zip
+            });
+        });
+    } else {
+        dogs.selectWhereAndWhere('size', req.body.a6, 'energy_level', req.body.a5, (data) => {
+            breedSearchJSON = data;
+            console.log('\nbreedSearchJSON: ', breedSearchJSON);
+            res.render('results', {
+                breeds: breedSearchJSON,
+                zip: answers.zip
+            });
+        });
+    }
+
 });
 
 
 // API Routes
 
 router.post('/results', (req, res) => {
-    zipSearch = req.body.zip;
-    console.log('\nzipSearch: ', zipSearch);
-    if (req.body.a4 == 'toddlers' || req.body.a4 == 'youngKids') {
-        dogs.selectNotAndWhereAndWhere('child_friendly', 'no', 'size', req.body.a6, 'energy_level', req.body.a5, (data) => {
-            breedSearchJSON = data;
-            console.log('\nbreedSearchJSON: ', breedSearchJSON);
-
-            // How to redirect to results page? Help!
-            // res.json(data);
-            // res.render('/results');
-            res.redirect('/results');
-        });
-    } else {
-        dogs.selectWhereAndWhere('size', req.body.a6, 'energy_level', req.body.a5, (data) => {
-            breedSearchJSON = data;
-            console.log('\nbreedSearchJSON: ', breedSearchJSON);
-
-            // How to redirect to results page? Help!
-            // res.json(data);
-            // res.render('/results');
-            res.redirect('/results');
-        });
-    }
-    // res.json(req.body);
-    // res.redirect('/results');
+    console.log(req.body);
+    answers = req.body;
+    res.redirect('/results');
 });
 
 router.post('/yelp', (req, res) => {

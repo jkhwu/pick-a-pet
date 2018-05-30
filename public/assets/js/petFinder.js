@@ -18,7 +18,8 @@ $.ajax({
     console.log(response)
     for (var i = 0; i < 5; i++) {
         var dogName = response.petfinder.pets.pet[i].name.$t; //works
-        var img = response.petfinder.pets.pet[i].media.photos.photo[0].$t; //works
+        var img = response.petfinder.pets.pet[i].media.photos.photo[3].$t;
+        // var img = response.petfinder.pets.pet[i].media.photos.photo[0].$t; //works
         //var breed1 = response.petfinder.pets.pet[i].breeds.breed[0].$t;//nope
         //var breed2 = response.petfinder.pets.pet[i].breeds.breed[1].$t;//nope
         var age = response.petfinder.pets.pet[i].age.$t; //works

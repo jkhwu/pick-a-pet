@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         js_file.type = 'text/javascript';
         js_file.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAhEDd6KCc_-MNLSCwo18cnT_8ZnhmsrV8&language=' + lang;
         document.getElementsByTagName('head')[0].appendChild(js_file);
-        $('#mapContainer').prepend('<h5>Input a Zip Code and Click a Term to Search. We will map the top results for you!</h5>')
+        // $('#mapContainer').prepend('<h5>Input a Zip Code and Click a Term to Search. We will map the top results for you!</h5>')
     }
 });
 $(document).ready(() => {
@@ -16,7 +16,9 @@ $(document).ready(() => {
     $('#pano').hide();
     $('.mapButton').on('click', function() {
         let selectedTerm = $(this).val().trim();
-        let zip = parseFloat($('#mapZip').val().trim().trim());
+        // let zip = parseFloat($('#mapZip').val().trim().trim());
+        let zip = $('#mapZip').text();
+        console.log(zip);
         validateZip(zip, selectedTerm);
     })
 })
@@ -102,8 +104,11 @@ function launchMap(coords, results) {
             label: label
         })
         var infoWindow = new google.maps.InfoWindow({
-            content: '<div><h2>' + props.name + '</h2><hr><p>' + props.address + '</p></div>'
-        })
+            content: '<div><p><b>' + props.name + '</b></p><hr><p>' + props.address + '</p></div>'
+        });
+        // var infoWindow = new google.maps.InfoWindow({
+        //     content: '<div><h2>' + props.name + '</h2><hr><p>' + props.address + '</p></div>'
+        // })
         marker.addListener('click', function() {
             infoWindow.open(map, marker);
         })
