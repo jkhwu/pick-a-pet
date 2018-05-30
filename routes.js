@@ -83,6 +83,23 @@ router.post('/results', (req, res) => {
     // res.redirect('/results');
 });
 
+router.post('/yelp', (req, res) => {
+    console.log(req.body);
+    client.search({
+            term: req.body.searchTerm,
+            location: req.body.zipCode,
+        })
+        .then(response => {
+            const results = response.jsonBody.businesses;
+            res.json({
+                clientSideData: req.body.searchTerm,
+                serverSideData: results
+            })
+        }).catch(e => {
+            console.log(e);
+        });
+})
+
 // Example Dog Routes
 
 router.post('/dogs', (req, res) => {
