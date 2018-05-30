@@ -4,6 +4,11 @@ const router = express.Router();
 const dogs = require('./app/dogs/dogs_controller.js');
 const qBank = require('./app/questions/qbank.js');
 
+// Yelp Require
+const yelpApiKey = '-q3CtZLqwY8BtuZ63pVZQAZdmfYtHqxEscODo8xV9G98V4mLaQkCVtrlTfDKUHNzdGsmjneOeKSNSrOmfvGElWiuvAZTcHKUgsNPBukQYlZyznB8leXH7zGmo437WnYx';
+var yelp = require('yelp-fusion');
+var client = yelp.client(yelpApiKey);
+
 // Global variables to pass into the results page
 let zipSearch = 92129;
 let breedSearchJSON = [{
