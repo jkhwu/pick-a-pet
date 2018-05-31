@@ -26,7 +26,11 @@ main {
 }
 
 .loginButton {
-    margin-top: 150px;
+    margin-top: 50px;
+}
+
+.desc {
+    margin-top: 100px;
 }
 
 
