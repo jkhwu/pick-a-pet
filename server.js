@@ -3,19 +3,10 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const exphbs = require('express-handlebars');
 
-// Handlebars-form-helpers experiment
-// var exphbs = require('express-handlebars'),
-//     handlebars = require('handlebars'),
-//     helpers = require('handlebars-form-helpers').register(handlebars);
-// var hbs = exphbs.create({
-//     helpers: helpers,
-//     defaultLayout: 'main'
-// });
-// app.engine('.hbs', hbs.engine);
-// app.set('view engine', '.hbs');
 
 // Require Routes
 const routes = require('./routes.js');
+const passport = require('./passport.js');
 
 // Create an instance of the express app.
 const app = express();
@@ -29,6 +20,10 @@ app.use(express.static(process.cwd() + '/public'));
 // body-parser middleware for req.body
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// middleware for passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride('_method'));

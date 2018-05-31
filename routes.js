@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 
+
+const passport = require('./passport.js');
 const dogs = require('./app/dogs/dogs_controller.js');
 const qBank = require('./app/questions/qbank.js');
 
@@ -81,6 +83,16 @@ router.get('/results', (req, res) => {
     }
 
 });
+
+// Passport routes
+
+router.get("/auth/google", passport.authenticate('google', {
+    scope: ['profile', 'email']
+}))
+
+router.get("/auth/google/callback",
+    passport.authenticate('google', { failureRedirect: "/" }),
+    (req, res, next) => res.redirect("/survey"))
 
 
 // API Routes
