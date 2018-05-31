@@ -35,18 +35,15 @@ let answers = {
 // let breedSearchArray = ['Terrier', 'Shepherd'];
 let breedSearchArray = [];
 
-// Example Layout - Get All Dogs from DB
-router.get('/', (req, res) => {
-    var breeds;
-    dogs.selectAll((breedData) => {
-        breeds = breedData;
-        res.render('example', {
-            breeds: breeds
-        });
-    });
-});
+
 
 // HTML Routes
+
+router.get('/', (req, res) => {
+    res.render('login', {
+        answers: answers
+    });
+});
 
 router.get('/survey', (req, res) => {
     res.render('survey', {
@@ -110,6 +107,17 @@ router.post('/yelp', (req, res) => {
             console.log(e);
         });
 })
+
+// Example Layout - Get All Dogs from DB
+router.get('/example', (req, res) => {
+    var breeds;
+    dogs.selectAll((breedData) => {
+        breeds = breedData;
+        res.render('example', {
+            breeds: breeds
+        });
+    });
+});
 
 // Example Dog Routes
 
