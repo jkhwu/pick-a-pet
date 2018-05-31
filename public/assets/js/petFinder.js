@@ -1,9 +1,9 @@
 var url = 'https://api.petfinder.com/pet.find';
-var petApiKey = 'feac31e797b10511584809f14f866c76';
 var zip = $('#mapZip').text()
 
 var breeds = $('#dogsView').attr('data-breeds').split(',');
 var size = $('#dogsView').attr('data-size');
+var petApiKey = $('#dogsView').attr('data-petkey');
 
 function translateSize(oldSize) {
     var newSize;

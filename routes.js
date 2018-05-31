@@ -1,11 +1,18 @@
+require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 
 const dogs = require('./app/dogs/dogs_controller.js');
 const qBank = require('./app/questions/qbank.js');
 
+// import keys
+const keys = require('./keys.js');
+const petfinderKey = keys.petfinder.api_key;
+const petfinderSecret = keys.petfinder.api_secret;
+const googlemapsKey = keys.googlemaps.api_key;
+const yelpApiKey = keys.yelp.api_key;
+
 // Yelp Require
-const yelpApiKey = '-q3CtZLqwY8BtuZ63pVZQAZdmfYtHqxEscODo8xV9G98V4mLaQkCVtrlTfDKUHNzdGsmjneOeKSNSrOmfvGElWiuvAZTcHKUgsNPBukQYlZyznB8leXH7zGmo437WnYx';
 var yelp = require('yelp-fusion');
 var client = yelp.client(yelpApiKey);
 
@@ -24,25 +31,6 @@ let answers = {
     experience: 'yes',
     zip: '92129'
 };
-let breedSearchJSON = [{
-        id: 47,
-        breed: 'Chinese Crested',
-        height: 13,
-        weight: 12,
-        size: 'small',
-        child_friendly: 'yes',
-        energy_level: 'low'
-    },
-    {
-        id: 49,
-        breed: 'Japanese Chin',
-        height: 11,
-        weight: 11,
-        size: 'small',
-        child_friendly: 'yes',
-        energy_level: 'low'
-    }
-];
 
 // let breedSearchArray = ['Terrier', 'Shepherd'];
 let breedSearchArray = [];
@@ -75,7 +63,9 @@ router.get('/results', (req, res) => {
             res.render('results', {
                 breeds: breedSearchArray,
                 zip: answers.zip,
-                size: answers.size
+                size: answers.size,
+                petfinderKey: petfinderKey,
+                googlemapsKey: googlemapsKey
             });
         });
     } else {
@@ -86,7 +76,9 @@ router.get('/results', (req, res) => {
             res.render('results', {
                 breeds: breedSearchArray,
                 zip: answers.zip,
-                size: answers.size
+                size: answers.size,
+                petfinderKey: petfinderKey,
+                googlemapsKey: googlemapsKey
             });
         });
     }

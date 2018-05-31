@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
             lang = 'en';
         var js_file = document.createElement('script');
         js_file.type = 'text/javascript';
-        js_file.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAhEDd6KCc_-MNLSCwo18cnT_8ZnhmsrV8&language=' + lang;
+        var gmapsApiKey = $('#mapContainer').attr('data-mapskey');
+        js_file.src = `https://maps.googleapis.com/maps/api/js?key=${gmapsApiKey}&language=` + lang;
         document.getElementsByTagName('head')[0].appendChild(js_file);
-        // $('#mapContainer').prepend('<h5>Input a Zip Code and Click a Term to Search. We will map the top results for you!</h5>')
     }
 });
 $(document).ready(() => {
@@ -16,7 +16,6 @@ $(document).ready(() => {
     $('#pano').hide();
     $('.mapButton').on('click', function() {
         let selectedTerm = $(this).val().trim();
-        // let zip = parseFloat($('#mapZip').val().trim().trim());
         let zip = $('#mapZip').text();
         console.log(zip);
         validateZip(zip, selectedTerm);
