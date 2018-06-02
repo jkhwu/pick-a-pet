@@ -56,19 +56,13 @@ function post(zip, selectedTerm) {
         }
         let latArray = [];
         let lngArray = [];
-        let latSum = 0;
-        let lngSum = 0;
         topFiveArray.forEach(element => {
             latArray.push(element.coordinates.latitude)
             lngArray.push(element.coordinates.longitude)
         });
-        latArray.forEach(latitude => {
-            latSum += parseFloat(latitude);
-        });
+        let latSum = latArray.reduce((a,b) => a + b, 0)
         let averageLatitude = latSum / latArray.length;
-        lngArray.forEach(longitude => {
-            lngSum += parseFloat(longitude);
-        });
+        let lngSum = lngArray.reduce((a,b) => a + b, 0)
         let averageLongitude = lngSum / lngArray.length;
         let center = { averageLatitude, averageLongitude }
         launchMap(center, topFiveArray);
